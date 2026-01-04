@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Just For You ❤️</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Playfair Display', serif;
+      background: #0d0d12;
+      color: #fff;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      font-weight: 700;
+      text-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      font-size: 2.8em;
+      font-family: 'Pacifico', cursive;
+      color: #ffeef8;
+      margin-top: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    #openBtn {
+      margin-top: 25px;
+      font-size: 1.3em;
+      padding: 12px 24px;
+      color: #ffccdd;
+      background: transparent;
+      border: 3px solid #ff80ab;
+      border-radius: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      animation: glowBtn 2s infinite ease-in-out;
+    }
+
+    @keyframes glowBtn {
+      0% { box-shadow: 0 0 8px #ff80ab; }
+      50% { box-shadow: 0 0 20px #ff3d7f; }
+      100% { box-shadow: 0 0 8px #ff80ab; }
+    }
+
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .fadeInUp {
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ❤️ Love Letter Box */
+    .letter-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 18px;
+      border-radius: 18px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 28px rgba(255,182,193,0.25);
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .letter-box p {
+      font-size: 1.1em;
+      line-height: 1.45em;
+      margin-top: 12px;
+    }
+
+    /* Countdown */
+    .countdown {
+      margin-top: 20px;
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #ff80ab;
+      text-shadow: 0 0 15px rgba(0,0,0,0.5);
+        text-align: center;
+  width: 100%;
+
+    }
+
+    /* Carousel */
+    .carousel {
+      margin-top: 30px;
+      width: 100%;
+      overflow-x: auto;
+      display: flex;
+      gap: 15px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 15px;
+    }
+
+    .carousel img,
+    .carousel video {
+      flex-shrink: 0;
+      width: 85%;
+      max-width: 400px;
+      border-radius: 18px;
+      scroll-snap-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .carousel img:active,
+    .carousel video:active,
+    .carousel img:hover,
+    .carousel video:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sparkle */
+    .sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: #ff80ab;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: floatUp 4s infinite ease-in-out;
+    }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
+      50% { transform: translateY(-220px) scale(1.6); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+      <!-- ⏳ Countdown -->
+    <div id="countdown" class="countdown fadeInUp">⏳ 00d 00h 00m 00s</div>
+  <h1>💞 A Message To Maame 💞</h1>
+  <button id="openBtn">Tap To Open ❤️</button>
+
+  <div id="content" class="hidden">
+
+    <!-- 💌 Love Letter -->
+    <div class="letter-box fadeInUp">
+      <h2>🌹 For You, My Light 🌹</h2>
+      <p>
+        I do cherish very little momemt we've spent on phone. <br>
+        It hasn't been long thou.But the good days🌟 and the other days.<br><br>
+        These memories — your voice, your glow, your kindness — <br>
+        they live inside me like the most beautiful dream. 💗<br><br>
+        Let’s count down together — <br>
+        not just to a date, but to every tomorrow we hope for. 🤍
+      </p>
+    </div>
+
+   
+
+  <!-- 🎥📸 Media Carousel -->
+<div class="carousel fadeInUp">
+  <img src="image1.jpeg" alt="Your Radiant Smile">
+
+  <video id="video1" autoplay playsinline controls loop muted>
+    <source src="video1.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+
+  <video id="video2" autoplay playsinline controls loop muted>
+    <source src="video2.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+
+  <video id="video3" autoplay playsinline controls loop muted>
+    <source src="video3.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+</div>
+
+
+  <script>
+    // 🪩 Intro logic
+    const openBtn = document.getElementById('openBtn');
+    const content = document.getElementById('content');
+
+    openBtn.addEventListener('touchstart', revealContent, {passive: true});
+    openBtn.addEventListener('click', revealContent);
+
+   function revealContent() {
+  openBtn.style.display = 'none';
+  content.classList.remove('hidden');
+
+  // 🎬 Autoplay all videos with unmuted sound
+  ['video1', 'video2', 'video3'].forEach(id => {
+    const video = document.getElementById(id);
+    if (video) {
+      video.muted = false;
+      video.volume = 1;
+      video.play().catch(err => {
+        console.warn("Autoplay blocked:", err);
+      });
+    }
+  });
+}
+
+
+
+    // ✨ Sparkles
+    for (let i = 0; i < 25; i++) {
+      const s = document.createElement('div');
+      s.classList.add('sparkle');
+      s.style.left = Math.random() * innerWidth + 'px';
+      s.style.top = Math.random() * innerHeight + 'px';
+      s.style.animationDelay = Math.random() * 4 + 's';
+      document.body.appendChild(s);
+    }
+
+    // ⏳ Countdown
+    const targetDate = new Date('January 18, 2026 00:00:00').getTime();
+    const countdownEl = document.getElementById('countdown');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "✨ It's Here, Beautiful! ✨";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `⏳ ${days}d ${hours}h ${mins}m ${secs}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
